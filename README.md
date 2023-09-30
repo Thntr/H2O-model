@@ -9,7 +9,16 @@ In the folder named **'Inverted Configuration'**, you will find a script that pe
 
 There is a piece of code in each of the two scripts mentioned above:
 
-<div style="background-color:#f5f5f5; padding:10px; border-radius:5px; border:1px solid #ddd;">
+<div style="
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  overflow-x: auto;
+">
   <pre>
     <code>
       # Ruta del archivo CSV
@@ -26,7 +35,7 @@ The same idea for **Inverted Configuration**, but for this case, some of the fil
   <pre>
     <code>
       distances_outwards = [7,6,5,4,3,2,1,0.8,0.6,0.58,0.56,0.54,0.52] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens are looking outwards to the center of mass.
-      energies_outwards = [] #List with total energies, hydrogens looking outwards to the center of mass.\\
+      energies_outwards = [] #List with total energies, hydrogens looking outwards to the center of mass.
     </code>
     <code>
       distances_inwards = [7.01,6.01,5.01,4.01,3.01,2.01,1.8] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens looking inwards to the center of mass.
