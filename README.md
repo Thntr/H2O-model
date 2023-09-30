@@ -13,8 +13,8 @@ There is a piece of code in each of the two scripts mentioned above:
   <pre>
     <code>
       # Ruta del archivo CSV
+      
       archivo_csv = "C:/Users/USUARIO/Downloads/chemcraft/molecules csv/H4O2({}).csv".format(distance_in_amstrongs)
-      }
     </code>
   </pre>
 </div>
