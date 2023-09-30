@@ -36,3 +36,43 @@ The same idea for **Inverted Configuration**, but for this case, some of the fil
 </div>
 
 Therefore, you just can identify in every name in file, and recognize which one is for inwards or outwards, because the distances to test each case are unique.
+
+# Modelo H2O
+
+Estos son un par de programas escritos en Python diseñados para determinar la energía total no enlazante de dos moléculas de agua. Esta energía resultante es la suma de todas las contribuciones electrostáticas y el potencial de Lennard-Jones entre los dos átomos de oxígeno.
+
+Ve al directorio **'Configuración Ordinaria'** para encontrar el script en el que puedes calcular la energía total a diferentes separaciones cuando todos los átomos de hidrógeno apuntan hacia la izquierda.
+
+En el directorio llamado **'Configuración Invertida'**, encontrarás un script que realiza los mismos cálculos, pero en una configuración en la que el par de átomos de hidrógeno de una molécula apunta en dirección opuesta con respecto a los átomos de hidrógeno de la otra molécula. Hay dos formas de configurar esta disposición: con los hidrógenos orientados hacia el centro de masa y con los hidrógenos orientados hacia afuera desde él.
+
+# Como utilizarlo
+
+En cada uno de los dos scripts mencionados anteriormente, encontrarás un fragmento de código:
+
+<div style="background-color:#f5f5f5; padding:10px; border-radius:5px; border:1px solid #ddd;">
+  <pre>
+    <code>
+      # Ruta del archivo CSV
+      archivo_csv = "C:/Users/USUARIO/Downloads/chemcraft/molecules csv/H4O2({}).csv".format(distance_in_amstrongs)
+    </code>
+  </pre>
+</div>
+
+Debes cambiar esta ruta para especificar dónde se encuentran los archivos de coordenadas. Los archivos de coordenadas establecen la distancia entre las dos moléculas. Por ejemplo, en este repositorio, dentro de **Configuración Ordinaria**, encontrarás una carpeta llamada **Archivos de Coordenadas**. Como puedes ver, hay 5 archivos, y en cada uno de ellos se encuentran las coordenadas de las dos moléculas en la configuración ordinaria, con una separación de **la cantidad de ángstroms que se indica en el nombre del archivo**, esto significa que **H4O2(3.6) es para 3.6 ángstroms, H4O2(4) para 4 ángstroms, y así sucesivamente**.
+
+La misma idea aplica para la Configuración Invertida, pero en este caso, algunos de los archivos son para la configuración invertida en la que los hidrógenos miran hacia afuera y otros para cuando miran hacia adentro. Puedes diferenciar fácilmente estos archivos porque dentro del código se especifica el conjunto de distancias asociado a la configuración de interés:
+
+<div style="background-color:#f5f5f5; padding:10px; border-radius:5px; border:1px solid #ddd;">
+  <pre>
+    <code>
+      distances_outwards = [7,6,5,4,3,2,1,0.8,0.6,0.58,0.56,0.54,0.52] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens are looking outwards to the center of mass.
+      energies_outwards = [] #List with total energies, hydrogens looking outwards to the center of mass.
+    </code>
+    <code>
+      distances_inwards = [7.01,6.01,5.01,4.01,3.01,2.01,1.8] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens looking inwards to the center of mass.
+      energies_inwards = [] #List of total energies, hydrogens looking inwards to the center of mass.
+    </code>
+  </pre>
+</div>
+
+Por lo tanto, puedes identificar cada nombre de archivo y reconocer cuál es para la configuración hacia adentro o hacia afuera, ya que las distancias para probar cada caso son únicas.
