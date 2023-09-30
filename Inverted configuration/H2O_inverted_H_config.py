@@ -39,22 +39,7 @@ def tot_energy(distance_in_amstrongs):
     # Calculate non-bonding energies and distances
     E_total_electrostatic = 0
 
-    #To calculate the sum of all the atomic contributions of electrostatic energy, we use the following for cycle...
-    for i in [0,1,2]:
-        for j in [3,4,5]:
-            rij = matrix_rij[i, j]
-            if atom_index[i] == '1':
-                qi = 0.417
-            elif atom_index[i] == '8':
-                qi = -0.417 * 2
-            if atom_index[j] == '1':
-                qj = 0.417
-            elif atom_index[j] == '8':
-                qj = -0.417 * 2
 
-            Eij = ((qi * qj) / rij) * 332
-            electrostatic_energy_matrix_rij[i, j] = Eij
-            E_total_electrostatic += Eij
 
     # To calculate the sum of all the atomic contributions of Lennard-Jones potential energy, we use the following for cycle...
     E_total_Lennard_Jones = 0
@@ -76,19 +61,19 @@ def tot_energy(distance_in_amstrongs):
     return E_total
 
 
-distances_inv = [7,6,5,4,3,2,1,0.8,0.6,0.58,0.56,0.54,0.52] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens are looking outwards to the center of mass.
-energies_inv = [] #List with total energies, hydrogens looking outwards to the center of mass.
+distances_outwards = [7,6,5,4,3,2,1,0.8,0.6,0.58,0.56,0.54,0.52] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens are looking outwards to the center of mass.
+energies_outwards = [] #List with total energies, hydrogens looking outwards to the center of mass.
 
-distances_std = [7.01,6.01,5.01,4.01,3.01,2.01,1.8] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens looking inwards to the center of mass.
-energies_std = [] #List of total energies, hydrogens looking inwards to the center of mass.
+distances_inwards = [7.01,6.01,5.01,4.01,3.01,2.01,1.8] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens looking inwards to the center of mass.
+energies_inwards = [] #List of total energies, hydrogens looking inwards to the center of mass.
 
 #Append the results of total energy for the inverted molecules (H's outwards)
-for distance in distances_inv:
-    energies_inv.append(tot_energy(distance))
+for distance in distances_outwards:
+    energies_outwards.append(tot_energy(distance))
 
 #Append the results of total energy for the water molecules (H's inwards)
-for distance in distances_std:
-    energies_std.append(tot_energy(distance))
+for distance in distances_inwards:
+    energies_inwards.append(tot_energy(distance))
 
 #Both graphs superposed:
 
@@ -99,10 +84,10 @@ plt.figure(figsize=(10, 6))
 plt.ylim(0, 30)
 
 # Plot the inverted molecules data, outwards arrange
-plt.plot(distances_inv, energies_inv, label='Molecules Inverted (Hs looking outwards)', marker='o')
+plt.plot(distances_outwards, energies_outwards, label='Molecules Inverted (Hs looking outwards)', marker='o')
 
 # Plot the inverted molecules data, inwards arrange
-plt.plot(distances_std, energies_std, label='Inverted (Hs looking inwards)', marker='s')
+plt.plot(distances_inwards, energies_inwards, label='Molecules Inverted (Hs looking inwards)', marker='s')
 
 # Add labels and title
 plt.xlabel('Distance in amstrongs')
