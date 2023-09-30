@@ -9,7 +9,7 @@ In the folder named **'Inverted Configuration'**, you will find a script that pe
 
 There is a piece of code in each of the two scripts mentioned above:
 
-<div style="background-color:#f5f5f5; padding:10px; border-radius:5px; border:1px solid #ddd;">
+<div style="background-color:#000000; padding:10px; border-radius:5px; border:1px solid #ddd;">
   <pre>
     <code>
       # Ruta del archivo CSV
