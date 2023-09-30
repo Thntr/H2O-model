@@ -39,17 +39,22 @@ def tot_energy(distance_in_amstrongs):
     # Calculate non-bonding energies and distances
     E_total_electrostatic = 0
 
-
-
-    # To calculate the sum of all the atomic contributions of Lennard-Jones potential energy, we use the following for cycle...
-    E_total_Lennard_Jones = 0
+    # To calculate the sum of all the atomic contributions of electrostatic energy, we use the following for cycle...
     for i in [0, 1, 2]:
         for j in [3, 4, 5]:
-            if atom_index[i] == '8' and atom_index[j] == '8':
-                rij = matrix_rij[i, j]
-                Eij = ((0.582 / rij ** 12) - (595.0 / rij ** 6))
-                Lennard_Jones_potential_energy_matrix_rij[i, j] = Eij
-                E_total_Lennard_Jones = Eij
+            rij = matrix_rij[i, j]
+            if atom_index[i] == '1':
+                qi = 0.417
+            elif atom_index[i] == '8':
+                qi = -0.417 * 2
+            if atom_index[j] == '1':
+                qj = 0.417
+            elif atom_index[j] == '8':
+                qj = -0.417 * 2
+
+            Eij = ((qi * qj) / rij) * 332
+            electrostatic_energy_matrix_rij[i, j] = Eij
+            E_total_electrostatic += Eij
 
     # To calculate the sum of all the atomic contributions of Lennard-Jones potential energy, we use the following...
     rOO = matrix_rij[1, 4]
