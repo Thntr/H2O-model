@@ -18,9 +18,9 @@ There is a piece of code in each of the two scripts mentioned above:
   </pre>
 </div>
 
-You need to change this path to specify where the coordinates files are located. The coordinates files set the distance beetween the two molecules. For example, in this repository, inside **Ordinary Configuration** there is a folder named as **Coordinates Files**, as you see, you can find 5 files, in which every file, contains the coordinates of the two molecules in the ordinary configuration with a separation of the number of amstrongs that is indicated in the name of file, this means, H4O2(3.6) for 3.6 amstrongs, H4O2 for 4 amstrongs and so on. 
+You need to change this path to specify where the coordinates files are located. The coordinates files set the distance beetween the two molecules. For example, in this repository, inside **Ordinary Configuration** there is a folder named as **Coordinates Files**, as you see, you can find 5 files, in which every file, contains the coordinates of the two molecules in the ordinary configuration with a separation of the **number of amstrongs that is indicated in the name of file**, this means, **H4O2(3.6) for 3.6 amstrongs, H4O2(4) for 4 amstrongs and so on**. 
 
-The same idea for **Inverted Configuration**, but for this case, some of the files are for the inverted config in which the hydrogens looks outwards and some are for the case looking inwards, you can differentiate these files easily, because inside code is specified the set of distances associated to the configuration of interest:
+The same idea for **Inverted Configuration**, but for this case, some of the files are for the inverted config in which the **hydrogens looks outwards and some are for the case looking inwards**, you can differentiate these files easily, **because inside code is specified the set of distances associated to the configuration of interest**:
 
 <div style="background-color:#f5f5f5; padding:10px; border-radius:5px; border:1px solid #ddd;">
   <pre>
