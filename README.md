@@ -28,7 +28,6 @@ The same idea for **Inverted Configuration**, but for this case, some of the fil
     <code>
       distances_outwards = [7,6,5,4,3,2,1,0.8,0.6,0.58,0.56,0.54,0.52] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens are looking         outwards to the center of mass.
       energies_outwards = [] #List with total energies, hydrogens looking outwards to the center of mass.
-
       distances_inwards = [7.01,6.01,5.01,4.01,3.01,2.01,1.8] #List of distances between Oxigen atoms of the two water molecules in a inverted position, hydrogens looking inwards to the       center of mass.
       energies_inwards = [] #List of total energies, hydrogens looking inwards to the center of mass.
       }
