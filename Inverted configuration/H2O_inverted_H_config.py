@@ -58,7 +58,7 @@ def tot_energy(distance_in_amstrongs):
 
     # To calculate the sum of all the atomic contributions of Lennard-Jones potential energy, we use the following...
     rOO = matrix_rij[1, 4]
-    EOO = ((0.582 / rOO ** 12) - (595.0 / rOO ** 6))
+    EOO = ((582000 / rOO ** 12) - (595.0 / rOO ** 6))
     E_Lennard_Jones = EOO
 
     E_total = E_total_electrostatic + E_Lennard_Jones
